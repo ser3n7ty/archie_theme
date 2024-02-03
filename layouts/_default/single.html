@@ -3,13 +3,20 @@
 	<article>
 		<div class="title">
 			<h1 class="title">{{ .Title }}</h1>
-			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<div class="meta">Word count: {{ .WordCount }} words</div>						
+			<div class="meta">
+				Posted on {{ dateFormat "January 2, 2006" .Date }}.
+				{{ if ne (dateFormat "January 2, 2006" .Date) (dateFormat "January 2, 2006" .Lastmod) }}
+				  Last modified on {{ dateFormat "January 2, 2006" .Lastmod }}.
+				{{ end }}
+				{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+			</div>						
 		</div>
-		{{ if isset .Params "tldr" }}
+		<!-- {{ if isset .Params "tldr" }}
 		<div class="tldr">
-			<strong>tl;dr:</strong>
+			<strong>tldr:</strong>
 			{{ .Params.tldr }}
-		</div>{{ end }}
+		</div>{{ end }} -->
 
 		<section class="body">
 			{{ .Content }}
@@ -28,15 +35,6 @@
 			{{ end }}
 			{{ end }}
 		</div>
-		{{- $.Scratch.Set "isDisqus" true -}}
-		<!-- Check if disqus short name is given -->
-		{{ if not .Site.DisqusShortname }}
-		{{- $.Scratch.Set "isDisqus" false -}}
-		{{ end }}
-
-		{{- if eq ($.Scratch.Get "isDisqus") true -}}
-		{{- partial "disqus.html" . -}}
-		{{- end -}}
 	</article>
 	<script src="https://giscus.app/client.js"
         data-repo="ser3n7ty/ser3n7ty.github.io"
