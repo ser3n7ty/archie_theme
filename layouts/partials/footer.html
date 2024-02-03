@@ -1,5 +1,5 @@
 <footer>
-  <div style="display:flex;">
+  <div class="social-icons">
     {{ with index .Site.Params.Social 0 }}
     <a href="mailto:{{ .url }}" rel="me" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>
     <a class="border" href="#"></a>
@@ -12,11 +12,10 @@
     <a href="{{ .url }}" rel="me" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>
     <a class="border" href="#"></a>
     {{ end }}
-
+    {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }}
   </div>
   <div class="footer-info">
-    {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} Based on <a
-      href="https://github.com/athul/archie">Archie</a> | Bulit with <a href="https://gohugo.io">Hugo</a>
+     Based on <a href="https://github.com/athul/archie">Archie</a> | Bulit with <a href="https://gohugo.io">Hugo</a>
       | <a id="scrollToTop" href="#" title="Go to top">Go to top</a>
   </div>
 </footer>
