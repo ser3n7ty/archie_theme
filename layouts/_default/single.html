@@ -5,9 +5,9 @@
 			<h1 class="title">{{ .Title }}</h1>
 			<div class="meta">Word count: {{ .WordCount }} words</div>						
 			<div class="meta">
-				Posted on {{ dateFormat "January 2, 2006" .Date }}.
+				Posted on {{ dateFormat "January 02, 2006" .Date }}.
 				{{ if ne (dateFormat "January 2, 2006" .Date) (dateFormat "January 2, 2006" .Lastmod) }}
-				  Last modified on {{ dateFormat "January 2, 2006" .Lastmod }}.
+				  Last modified on {{ dateFormat "January 02, 2006" .Lastmod }}.
 				{{ end }}
 				{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
 			</div>						
