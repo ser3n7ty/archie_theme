@@ -17,11 +17,13 @@
 			<strong>tldr:</strong>
 			{{ .Params.tldr }}
 		</div>{{ end }} -->
-
+			<!-- 目录 -->
+		<aside class="table-of-contents">
+			{{ .TableOfContents }}
+		</aside>
 		<section class="body">
 			{{ .Content }}
 		</section>
-
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
@@ -54,4 +56,3 @@
 	</script>
 </main>
 {{ end }}
-

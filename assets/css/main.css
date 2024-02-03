@@ -18,7 +18,7 @@ body{
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* TODO: 1. 目录设置 2. 社交账号下划线设置 */
+
 ::selection {
   background:rgba(197, 8, 8, 0.2);
 }
@@ -85,7 +85,7 @@ figure img {
     padding: 0 40px;
   }
 }
-
+/* TODO: 修改图片题注的样式 */
 figure h4 {
   font-size: 1rem;
   margin: 0;
@@ -93,16 +93,6 @@ figure h4 {
 }
 figure h4::before {
   content: '↳ ';
-}
-
-/* Containers */
-.content {
-  margin-bottom: 4em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  padding: 0 1ch;
-  word-wrap: break-word;
 }
 
 /* Header */
@@ -132,6 +122,18 @@ h6::before { color: var(--maincolor); content: '###### '; }
 .meta {
   color: #999;
   letter-spacing: -0.5px;
+}
+
+/* Containers */
+.content {
+  margin-bottom: 4em;
+  /* 以下内容实现了页面左右居中 */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  /* 以上内容实现了页面左右居中 */
+  padding: 0 1ch;
+  word-wrap: break-word;
 }
 
 /* Footer */
@@ -193,8 +195,8 @@ article .title {
 }
 
 .site-description {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .description {
   line-height: 1.5; /* 设置1.5倍行间距 */
@@ -220,12 +222,12 @@ svg{
   color: white;
 }
 .draft-label{ 
-    color: var(--bordercl);
-    text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 4px;
-    margin-left: 6px;
-    background-color: #f9f2f4;
+  color: var(--bordercl);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 6px;
+  background-color: #f9f2f4;
 }
 .highlight {
   position: relative;
@@ -281,6 +283,29 @@ pre code {
   text-align: right;
   top: 0;
 }
+
+/* table */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th{
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+  font-size: large;
+}
+
+table td{
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .highlight pre code[class*='language-c']::before,
 .highlight pre code[class*='language-cpp']::before,
 .highlight pre code[class*='language-c++']::before {
@@ -321,26 +346,4 @@ pre code {
 }
 .highlight pre code[class*='language-java']::before{
   content: 'Java';
-}
-
-/* table */
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-table th{
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-  font-size: large;
-}
-
-table td{
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-}
-
-.social-icons {
-  display: flex;
-  flex-wrap: wrap;
 }
