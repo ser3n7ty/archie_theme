@@ -49,7 +49,7 @@ hr {
 /* Blockquote */
 blockquote {
   border-left: 3px solid var(--bordercl);
-  color: #737373;
+  color: #cbb9b9;
   margin: 0;
   padding-left: 1em;
 }
@@ -138,7 +138,7 @@ h6::before { color: var(--maincolor); content: '###### '; }
 
 /* Metadata */
 .meta {
-  color: #999;
+  color: #e1cdcd;
   letter-spacing: -0.5px;
 }
 
