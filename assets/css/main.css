@@ -1,7 +1,7 @@
 /* Import Fonts from CDN */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* Variables */
 :root {
@@ -36,7 +36,7 @@ body {
 /* Paragraphs */
 p {
   line-height: 26px;
- 
+
 }
 
 /* Horizontal Rule */
@@ -76,7 +76,7 @@ ul li {
   text-indent: -2ch;
 }
 
-ul > li::before {
+ul>li::before {
   content: '* ';
   font-weight: bold;
 }
@@ -115,26 +115,53 @@ header {
 }
 
 header .main {
-  font-size: 1.5rem;
-  font-family: 'Lobster', cursive; /* 标题字体 */
+  font-family: cursive;
 }
 
 header .menu {
-  font-family: cursive;;
+  font-family: cursive;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 1.2rem;
   margin-top: 2em;
 }
 
-h1::before { color: var(--maincolor); content: '# '; }
-h2::before { color: var(--maincolor); content: '## '; }
-h3::before { color: var(--maincolor); content: '### '; }
-h4::before { color: var(--maincolor); content: '#### '; }
-h5::before { color: var(--maincolor); content: '##### '; }
-h6::before { color: var(--maincolor); content: '###### '; }
+h1::before {
+  color: var(--maincolor);
+  content: '# ';
+}
+
+h2::before {
+  color: var(--maincolor);
+  content: '## ';
+}
+
+h3::before {
+  color: var(--maincolor);
+  content: '### ';
+}
+
+h4::before {
+  color: var(--maincolor);
+  content: '#### ';
+}
+
+h5::before {
+  color: var(--maincolor);
+  content: '##### ';
+}
+
+h6::before {
+  color: var(--maincolor);
+  content: '###### ';
+}
 
 /* Metadata */
 .meta {
@@ -161,7 +188,8 @@ footer {
   padding: 2rem 0rem;
   margin-top: 2rem;
   font-family: cursive;
-  width: 100%; /* 占满一行 */
+  width: 100%;
+  /* 占满一行 */
 }
 
 /* Footer Social Icons */
@@ -171,11 +199,13 @@ footer {
 }
 
 .social-icons a {
-  margin-right: 5px; /* 左侧盒子中的 icon 间隔 */
+  margin-right: 5px;
+  /* 左侧盒子中的 icon 间隔 */
 }
 
 .social-icons a:last-child {
-  margin-right: 0; /* 最后一个 icon 不添加右边距 */
+  margin-right: 0;
+  /* 最后一个 icon 不添加右边距 */
 }
 
 
@@ -238,9 +268,12 @@ article .title {
 }
 
 .description {
-  line-height: 1.5; /* 设置1.5倍行间距 */
-  padding: 15px; /* 上下间距，根据需要调整 */
-  text-indent: 4ch; /* 设置首行缩进4个字符 */
+  line-height: 1.5;
+  /* 设置1.5倍行间距 */
+  padding: 15px;
+  /* 上下间距，根据需要调整 */
+  text-indent: 4ch;
+  /* 设置首行缩进4个字符 */
 }
 
 /* Tags */
@@ -249,12 +282,12 @@ article .title {
 }
 
 .tags a {
-  border-bottom: 3px solid var(--maincolor); 
+  border-bottom: 3px solid var(--maincolor);
 }
 
 .tags a:hover {
   color: white;
-  background-color: var(--hovercolor); 
+  background-color: var(--hovercolor);
 }
 
 svg {
@@ -265,7 +298,7 @@ svg {
   color: white;
 }
 
-.draft-label { 
+.draft-label {
   color: var(--bordercl);
   text-decoration: none;
   padding: 2px 4px;
