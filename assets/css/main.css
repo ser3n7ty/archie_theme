@@ -1,6 +1,5 @@
 /* Import Fonts from CDN */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* Variables */
@@ -16,7 +15,8 @@
 html {
   color: #232333;
   font-size: 15px;
-  font-family: 'Roboto Mono', 'Noto Sans SC', sans-serif;
+  /* font-family: 'Roboto Mono', 'Noto Sans SC', sans-serif; */
+  font-family: 'Roboto Mono', 'Noto Sans SC'
 }
 
 body {
