@@ -1,0 +1,37 @@
+<div class="code-container">
+    <div class="code-header">
+        <span class="language-label">{{ .Type }}</span>
+        <button class="copy-code" onclick="copyCode(this)">Copy</button>
+    </div>
+    <div class="highlight">
+        {{ highlight .Inner .Type }}
+    </div>
+</div>
+
+<script>
+    function copyCode(button) {
+        // 找到最近的代码块容器
+        const codeContainer = button.closest('.code-container');
+
+        // 找到代码块中的代码内容（第二个 <td>）
+        const codeBlock = codeContainer.querySelector('.highlight table td:nth-child(2)');
+
+        // 获取代码文本并去除多余空白和空行
+        const codeText = codeBlock.innerText
+            .trim() // 去除前后空白
+            .replace(/^\s*[\r\n]/gm, ''); // 去除多余空行
+
+        // 使用 Clipboard API 复制代码
+        navigator.clipboard.writeText(codeText).then(() => {
+            // 复制成功后的反馈
+            button.textContent = 'Copied';
+            setTimeout(() => {
+                button.textContent = 'Copy';
+            }, 2000); // 2秒后恢复按钮文本
+        }).catch(err => {
+            // 复制失败时的处理
+            console.error('Failed to copy text: ', err);
+            button.textContent = 'Failed to copy';
+        });
+    }
+</script>

@@ -1,0 +1,54 @@
+<footer>
+  <div class="social-icons">
+    {{ with index .Site.Params.Social 0 }}
+    <a href="{{ .url }}" rel="https://github.com/ser3n7ty" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>
+    {{ end }}
+    {{ with index .Site.Params.Social 1 }}
+    <a href="mailto:{{ .url }}" rel="me" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>
+    {{ end }}
+    {{ with index .Site.Params.Social 2 }}
+    <a href="{{ .url }}" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>
+    {{ end }}
+  </div>
+  <div class="footer-center">
+    {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}
+  </div>
+  <div class="footer-info">
+    Based on <a href="https://github.com/athul/archie">Archie</a>
+  </div>
+  <div class="footer-info">
+    Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+  <div class="footer-info">
+    <a id="scrollToTop" href="#" title="Go to top">Go to top</a>
+  </div>
+</footer>
+
+{{- if (isset .Site.Params "social") -}}
+<script>
+  feather.replace()
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the button
+    var scrollToTopButton = document.getElementById("scrollToTop");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document with smooth behavior
+    scrollToTop.addEventListener("click", function () {
+      // Use the `scrollIntoView` method with `behavior: 'smooth'` to achieve smooth scrolling
+      document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+{{- end -}}

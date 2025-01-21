@@ -1,0 +1,14 @@
+<header>
+	<div class="main">
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	</div>
+	<div class="menu">
+		<nav>
+			{{ range .Site.Menus.main }}
+			<a href="{{ .URL }}">{{ .Name }}</a>
+			{{ end }}
+		</nav>
+	</div>
+</header>
+<!-- 加载 feather 图标库 -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
