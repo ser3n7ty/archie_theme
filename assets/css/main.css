@@ -221,15 +221,9 @@ footer {
   border: 1px solid;
 }
 
-<<<<<<< HEAD
 /*.footer-info {*/
 /*  padding: var(--footer-padding);*/
 /*}*/
-=======
-.footer-info {
-  padding: var(--footer-padding);
-}
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 
 /* Title */
 .title h1 {
@@ -313,32 +307,26 @@ svg {
   background-color: #f9f2f4;
 }
 
-<<<<<<< HEAD
 /* Code Blocks */
 code {
   direction: ltr;
-=======
-.highlight {
-  position: relative;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Code Blocks */
-code {
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
   background-color: #f2efef;
   padding: .1em .2em;
   font-family: 'Fira Code', monospace;
 }
-<<<<<<< HEAD
+
 /* 代码块容器 */
 .code-container {
   position: relative;
   margin: 1rem 0;
-  background-color: #282a36; /* 代码块背景颜色 */
-  border-radius: 10px; /* 圆角 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-  overflow: hidden; /* 确保子元素不会超出容器 */
+  background-color: #282a36;
+  /* 代码块背景颜色 */
+  border-radius: 10px;
+  /* 圆角 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* 阴影效果 */
+  overflow: hidden;
+  /* 确保子元素不会超出容器 */
 }
 
 /* 代码头部 */
@@ -347,7 +335,8 @@ code {
   justify-content: space-between;
   align-items: center;
   height: 14px;
-  background-color: #28282b; /* 头部背景颜色 */
+  background-color: #28282b;
+  /* 头部背景颜色 */
   padding: 0.5rem 1rem;
   color: #fff;
   font-family: 'Fira Code', monospace;
@@ -423,7 +412,8 @@ pre {
   font-family: 'Fira Code', monospace;
   font-size: 14px;
   line-height: 1.3;
-  color: #f8f8f2; /* 代码文本颜色 */
+  color: #f8f8f2;
+  /* 代码文本颜色 */
 }
 
 .highlight pre code {
@@ -440,28 +430,6 @@ pre {
   /* 行号与代码的间距 */
   user-select: none;
   /* 禁止选中行号 */
-=======
-
-/* Preformatted Text */
-pre {
-  background-color: #ececec;
-  overflow-x: auto;
-  padding: 1em;
-}
-
-/* Adjustments for Firefox */
-@-moz-document url-prefix() {
-  pre {
-    line-height: 103%;
-  }
-}
-
-/* Selection in Code Blocks */
-.highlight pre ::selection {
-  background: rgba(197, 8, 8, 0.2);
-  color: inherit;
-  display: block;
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 }
 
 pre code {
@@ -471,26 +439,6 @@ pre code {
   padding: 0;
 }
 
-<<<<<<< HEAD
-=======
-.highlight pre code[class*="language-"] {
-  -webkit-overflow-scrolling: touch;
-}
-
-.highlight pre code[class*="language-"]::before {
-  background: rgb(235, 108, 108);
-  color: white;
-  border-radius: 0.1rem 0.1rem 0.25rem 0.25rem;
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
-  position: absolute;
-  right: 1rem;
-  text-align: right;
-  top: 0;
-}
-
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 /* Tables */
 table {
   border-spacing: 0;
@@ -514,63 +462,9 @@ table td {
   flex-wrap: wrap;
 }
 
-<<<<<<< HEAD
 /* Adjustments for Firefox */
 @-moz-document url-prefix() {
   pre {
     line-height: 103%;
   }
-=======
-/* Language Labels in Code Blocks */
-.highlight pre code[class*='language-c']::before,
-.highlight pre code[class*='language-cpp']::before,
-.highlight pre code[class*='language-c++']::before {
-  content: 'C/Cpp';
-}
-
-.highlight pre code[class*='language-python']::before,
-.highlight pre code[class*='language-py']::before {
-  content: 'Python';
-}
-
-.highlight pre code[class*='language-markdown']::before,
-.highlight pre code[class*='language-md']::before {
-  content: 'Markdown';
-}
-
-.highlight pre code[class*='language-shell']::before,
-.highlight pre code[class*='language-bash']::before,
-.highlight pre code[class*='language-sh']::before {
-  content: 'Shell';
-}
-
-.highlight pre code[class=language-javaScript]::before,
-.highlight pre code[class="language-js"]::before {
-  content: "JS";
-}
-
-.highlight pre code[class*='language-yml']::before,
-.highlight pre code[class*='language-yaml']::before {
-  content: 'Yaml';
-}
-
-.highlight pre code[class*='language-json']::before {
-  content: 'Json';
-}
-
-.highlight pre code[class*='language-css']::before {
-  content: 'CSS';
-}
-
-.highlight pre code[class*='language-go']::before {
-  content: 'Go';
-}
-
-.highlight pre code[class*='language-rust']::before {
-  content: 'Rust';
-}
-
-.highlight pre code[class*='language-java']::before {
-  content: 'Java';
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 }

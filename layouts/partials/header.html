@@ -14,25 +14,17 @@
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
 	<meta name="description"
 		content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 	<meta property="og:image" content="{{ .Site.Params.og_image }}" />
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `
 	<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-=======
-	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
-	{{ with .OutputFormats.Get "rss" -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 	{{ end -}}
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
-<<<<<<< HEAD
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
 	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
@@ -44,53 +36,26 @@
 	{{- else -}}
 	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
 	<link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
-=======
-		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	{{- else if or (isset .Site.Params "social") (eq .Site.Params.mode "toggle") -}}
-		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
-	{{ end }}
-	{{ if .Site.Params.useCDN | default false -}}
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-	{{- else -}}
-	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
-        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 	{{ end }}
 
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
 
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
-<<<<<<< HEAD
 	{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
 	<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq
 		.Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)" {{ end }} {{ if eq .Site.Params.mode "toggle"
 		}}disabled{{ end }} />
-=======
-		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 	{{ end }}
 
 	<!-- Mathjax support -->
 	{{ with .Site.Params.mathjax }}
-<<<<<<< HEAD
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 		</script>
 
 	<!-- inline Mathjax -->
 	<script type="text/x-mathjax-config">
-=======
-		<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
-	
-		<!-- inline Mathjax -->
-		<script type="text/x-mathjax-config">
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 		MathJax.Hub.Config({
 			tex2jax: {
 				inlineMath: [['$','$'], ['\\(','\\)']],
@@ -107,7 +72,6 @@
 
 	<!-- KaTeX support -->
 	{{ with .Site.Params.katex }}
-<<<<<<< HEAD
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
@@ -132,36 +96,10 @@
 	{{ $customstyle := resources.Get . | fingerprint }}
 	<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
 	{{ end }}
-=======
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-		
-		<!-- inline KaTeX -->
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-					renderMathInElement(document.body, {
-							delimiters: [
-									{left: "$$", right: "$$", display: true},
-									{left: "$", right: "$", display: false}
-							]
-					});
-			});
-			</script>
-	{{ end }}
-	
-	<!-- Custom CSS style get applied last -->
-	{{- if isset .Site.Params "customcss" }}
-		{{ range .Site.Params.customCSS }}
-		{{ $customstyle := resources.Get . | fingerprint }}
-		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
-		{{ end }}
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
 	{{- end -}}
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
-<<<<<<< HEAD
 	{{- else if (hasPrefix . "<script")}} {{ .| safeHTML }} {{- else }} <script src="{{ $.Site.BaseURL }}{{ . }}">
 	</script>
 		{{- end }}
@@ -174,19 +112,3 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 </head>
-=======
-	{{- else if (hasPrefix . "<script")}}
-    {{ .| safeHTML }}
-	{{- else }}
-	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
-	{{- end }}
-	{{- end }}
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/favicons/site.webmanifest">
-	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-</head>
->>>>>>> 68b626409a0fa53f1c5c2c3c49c10b9adff43a3e
